@@ -1,13 +1,13 @@
 @model IEnumerable<APICurso.Models.Curso>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cursos";
 }
 
-<h1>Index</h1>
+<h1>Cursos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-secondary"> Adicionar </a>
 </p>
 <table class="table">
     <thead>
@@ -27,9 +27,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.User)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Categoria)
             </th>
@@ -54,16 +54,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.User)
-            </td>
+            </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.Categoria.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CursoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CursoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CursoId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CursoId" class="btn btn-primary">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.CursoId" class="btn btn-warning">Detalhe</a> 
+                <a asp-action="Delete" asp-route-id="@item.CursoId" class="btn btn-danger">Deletar</a>
             </td>
         </tr>
 }

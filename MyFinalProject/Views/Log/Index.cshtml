@@ -1,14 +1,16 @@
 @model IEnumerable<APICurso.Models.Log>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Log";
 }
 
-<h1>Index</h1>
+<h1>Log</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@* <p>
+    <a asp-action="Create" >Create New</a>
+</p> *@
+<br>
+
 <table class="table">
     <thead>
         <tr>
@@ -43,9 +45,9 @@
                 @Html.DisplayFor(modelItem => item.Curso.Descricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.LogId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LogId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LogId">Delete</a>
+                @* <a asp-action="Edit" asp-route-id="@item.LogId">Edit</a> | *@
+                <a asp-action="Details" asp-route-id="@item.LogId" class="btn btn-info">Detalhe</a> 
+                @* | <a asp-action="Delete" asp-route-id="@item.LogId">Delete</a> *@
             </td>
         </tr>
 }

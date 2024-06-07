@@ -1,13 +1,13 @@
 @model IEnumerable<APICurso.Models.Categoria>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categoria";
 }
 
-<h1>Index</h1>
+<h1>Categoria</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-secondary"> Adicionar </a>
 </p>
 <table class="table">
     <thead>
@@ -15,7 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th></th>
+            <th>
+                Ações
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -25,9 +27,9 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoriaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoriaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoriaId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn btn-primary" >Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.CategoriaId" class="btn btn-warning" >Detalhe</a> 
+                <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn btn-danger" >Deletar</a>
             </td>
         </tr>
 }
